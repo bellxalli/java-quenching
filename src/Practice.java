@@ -1,5 +1,6 @@
-import java.util.Map;
-import java.util.Set;
+// import java.util.Map;
+// import java.util.Set;
+import java.util.*;
 
 public class Practice {
     /**
@@ -11,7 +12,21 @@ public class Practice {
      * @return the sum of the odd numbers in the array
      */
     public static int oddSum(int[] nums) {
-        return 0;
+        int sum  = 0;
+
+        if(nums == null)
+        {
+            return 0;
+        }
+
+        for(int i = 0; i < nums.length; i++)
+        {
+            if(nums[i] % 2 != 0)
+            {
+                sum += nums[i];
+            }
+        }
+        return sum;
     }
 
     /**
@@ -26,7 +41,33 @@ public class Practice {
      * @throws NullPointerException if words is null
      */
     public static String shortestWord(Set<String> words) {
-        return null;
+        if(words == null)
+            throw new NullPointerException("words is null");
+        if(words.isEmpty())
+            throw new IllegalArgumentException("words is empty");
+
+        String smallest = "";
+        for(String word : words) //to get a word for starting length is not 0
+        {
+            smallest = word;
+            break;
+        }
+
+        for(String word : words)
+        {
+            if(word.length() < smallest.length())
+            {
+                smallest = word;
+            }
+            else if(smallest.length() == word.length())
+            {
+                if(smallest.compareTo(word) > 0)
+                {
+                    smallest = word;
+                }
+            }
+        }
+        return smallest;
     }
 
     /**
