@@ -80,7 +80,21 @@ public class Practice {
      * @throws NullPointerException if ages is null
      */
     public static Set<String> adults(Map<String, Integer> ages) {
-        return null;
+        if(ages == null)
+        {
+            throw new NullPointerException("map is null");
+        }
+        Set<String> names = new HashSet<>();
+
+        for(String name : ages.keySet())
+        {
+            if(ages.get(name) >= 18)
+            {
+                names.add(name);
+            }
+        }
+
+        return names;
     }
 
     /**

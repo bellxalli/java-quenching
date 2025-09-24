@@ -60,78 +60,78 @@ public class PracticeTest {
         assertEquals("ape", Practice.shortestWord(words));
     }
 
-    // // ===== adults ============================================================
+    // ===== adults ============================================================
 
-    // @Test
-    // void adults_mixedAgesWithBoundaryIncluded() {
-    //     Map<String, Integer> ages = new HashMap<>();
-    //     ages.put("Ana", 17);
-    //     ages.put("Ben", 18);
-    //     ages.put("Caz", 41);
-    //     ages.put("Dee", 16);
-    //     ages.put("Eli", 18);
+    @Test
+    void adults_mixedAgesWithBoundaryIncluded() {
+        Map<String, Integer> ages = new HashMap<>();
+        ages.put("Ana", 17);
+        ages.put("Ben", 18);
+        ages.put("Caz", 41);
+        ages.put("Dee", 16);
+        ages.put("Eli", 18);
 
-    //     Set<String> result = Practice.adults(ages);
-    //     Set<String> expected = new HashSet<>(Arrays.asList("Ben", "Caz", "Eli"));
+        Set<String> result = Practice.adults(ages);
+        Set<String> expected = new HashSet<>(Arrays.asList("Ben", "Caz", "Eli"));
 
-    //     assertEquals(expected, result);
-    // }
+        assertEquals(expected, result);
+    }
 
-    // @Test
-    // void adults_emptyInputGivesEmptySet() {
-    //     Map<String, Integer> ages = new HashMap<>();
-    //     assertTrue(Practice.adults(ages).isEmpty());
-    // }
+    @Test
+    void adults_emptyInputGivesEmptySet() {
+        Map<String, Integer> ages = new HashMap<>();
+        assertTrue(Practice.adults(ages).isEmpty());
+    }
 
-    // @Test
-    // void adults_noAdultsAllUnder18() {
-    //     Map<String, Integer> ages = new HashMap<>();
-    //     ages.put("Ira", 6);
-    //     ages.put("Jay", 12);
-    //     ages.put("Kai", 17);
-    //     assertTrue(Practice.adults(ages).isEmpty());
-    // }
+    @Test
+    void adults_noAdultsAllUnder18() {
+        Map<String, Integer> ages = new HashMap<>();
+        ages.put("Ira", 6);
+        ages.put("Jay", 12);
+        ages.put("Kai", 17);
+        assertTrue(Practice.adults(ages).isEmpty());
+    }
 
-    // // ===== biggestNumber =====================================================
+    // ===== biggestNumber =====================================================
 
-    // @Test
-    // void biggestNumber_mixedPosNegAndDuplicates() {
-    //     /*
-    //      * List:
-    //      *   5 -> -11 -> 42 -> 7 -> 42 -> -3 -> 0
-    //      */
-    //     ListNode<Integer> head = new ListNode<>(5,
-    //         new ListNode<>(-11,
-    //             new ListNode<>(42,
-    //                 new ListNode<>(7,
-    //                     new ListNode<>(42,
-    //                         new ListNode<>(-3,
-    //                             new ListNode<>(0, null)))))));
+    @Test
+    void biggestNumber_mixedPosNegAndDuplicates() {
+        /*
+         * List:
+         *   5 -> -11 -> 42 -> 7 -> 42 -> -3 -> 0
+         */
+        ListNode<Integer> head = new ListNode<>(5,
+            new ListNode<>(-11,
+                new ListNode<>(42,
+                    new ListNode<>(7,
+                        new ListNode<>(42,
+                            new ListNode<>(-3,
+                                new ListNode<>(0, null)))))));
 
-    //     assertEquals(42, Practice.biggestNumber(head));
-    // }
+        assertEquals(42, Practice.biggestNumber(head));
+    }
 
-    // @Test
-    // void biggestNumber_singleNodeNegative() {
-    //     /*
-    //      * List:
-    //      *   -8
-    //      */
-    //     ListNode<Integer> head = new ListNode<>(-8, null);
-    //     assertEquals(-8, Practice.biggestNumber(head));
-    // }
+    @Test
+    void biggestNumber_singleNodeNegative() {
+        /*
+         * List:
+         *   -8
+         */
+        ListNode<Integer> head = new ListNode<>(-8, null);
+        assertEquals(-8, Practice.biggestNumber(head));
+    }
 
-    // @Test
-    // void biggestNumber_allEqualValues() {
-    //     /*
-    //      * List:
-    //      *   13 -> 13 -> 13
-    //      */
-    //     ListNode<Integer> head = new ListNode<>(13,
-    //         new ListNode<>(13,
-    //             new ListNode<>(13, null)));
-    //     assertEquals(13, Practice.biggestNumber(head));
-    // }
+    @Test
+    void biggestNumber_allEqualValues() {
+        /*
+         * List:
+         *   13 -> 13 -> 13
+         */
+        ListNode<Integer> head = new ListNode<>(13,
+            new ListNode<>(13,
+                new ListNode<>(13, null)));
+        assertEquals(13, Practice.biggestNumber(head));
+    }
 
     // // ===== frequencies =======================================================
 
