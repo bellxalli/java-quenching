@@ -328,78 +328,78 @@ public class PracticeTest {
         assertEquals(0, Practice.sumAtLevel(root, 2));
     }
 
-    // // ===== sumMatch ==========================================================
+    // ===== sumMatch ==========================================================
 
-    // @Test
-    // void sumMatch_equalSumsNonEmpty() {
-    //     /*
-    //      * Tree:
-    //      *      6
-    //      *     / \
-    //      *    4   1
-    //      *   / \
-    //      *  -2  7
-    //      * Tree sum = 6 + 4 + 1 + (-2) + 7 = 16
-    //      *
-    //      * List:
-    //      *  10 -> 3 -> 3
-    //      * List sum = 16
-    //      */
-    //     BinaryTreeNode<Integer> root =
-    //         new BinaryTreeNode<>(6,
-    //             new BinaryTreeNode<>(4,
-    //                 new BinaryTreeNode<>(-2),
-    //                 new BinaryTreeNode<>(7)),
-    //             new BinaryTreeNode<>(1));
+    @Test
+    void sumMatch_equalSumsNonEmpty() {
+        /*
+         * Tree:
+         *      6
+         *     / \
+         *    4   1
+         *   / \
+         *  -2  7
+         * Tree sum = 6 + 4 + 1 + (-2) + 7 = 16
+         *
+         * List:
+         *  10 -> 3 -> 3
+         * List sum = 16
+         */
+        BinaryTreeNode<Integer> root =
+            new BinaryTreeNode<>(6,
+                new BinaryTreeNode<>(4,
+                    new BinaryTreeNode<>(-2),
+                    new BinaryTreeNode<>(7)),
+                new BinaryTreeNode<>(1));
 
-    //     ListNode<Integer> head = new ListNode<>(10,
-    //         new ListNode<>(3,
-    //             new ListNode<>(3, null)));
+        ListNode<Integer> head = new ListNode<>(10,
+            new ListNode<>(3,
+                new ListNode<>(3, null)));
 
-    //     assertTrue(Practice.sumMatch(root, head));
-    // }
+        assertTrue(Practice.sumMatch(root, head));
+    }
 
-    // @Test
-    // void sumMatch_notEqual() {
-    //     /*
-    //      * Tree:
-    //      *    5
-    //      *   / \
-    //      *  2   2
-    //      * Sum = 9
-    //      *
-    //      * List:
-    //      *  4 -> 4
-    //      * Sum = 8
-    //      */
-    //     BinaryTreeNode<Integer> root =
-    //         new BinaryTreeNode<>(5,
-    //             new BinaryTreeNode<>(2),
-    //             new BinaryTreeNode<>(2));
+    @Test
+    void sumMatch_notEqual() {
+        /*
+         * Tree:
+         *    5
+         *   / \
+         *  2   2
+         * Sum = 9
+         *
+         * List:
+         *  4 -> 4
+         * Sum = 8
+         */
+        BinaryTreeNode<Integer> root =
+            new BinaryTreeNode<>(5,
+                new BinaryTreeNode<>(2),
+                new BinaryTreeNode<>(2));
 
-    //     ListNode<Integer> head = new ListNode<>(4,
-    //         new ListNode<>(4, null));
+        ListNode<Integer> head = new ListNode<>(4,
+            new ListNode<>(4, null));
 
-    //     assertFalse(Practice.sumMatch(root, head));
-    // }
+        assertFalse(Practice.sumMatch(root, head));
+    }
 
-    // @Test
-    // void sumMatch_bothEmptyAreZeroSoTrue() {
-    //     BinaryTreeNode<Integer> root = null;
-    //     ListNode<Integer> head = null;
-    //     assertTrue(Practice.sumMatch(root, head));
-    // }
+    @Test
+    void sumMatch_bothEmptyAreZeroSoTrue() {
+        BinaryTreeNode<Integer> root = null;
+        ListNode<Integer> head = null;
+        assertTrue(Practice.sumMatch(root, head));
+    }
 
-    // @Test
-    // void sumMatch_emptyTreeNonEmptyListFalse() {
-    //     BinaryTreeNode<Integer> root = null;
-    //     /*
-    //      * List:
-    //      *   1 -> 2
-    //      */
-    //     ListNode<Integer> head = new ListNode<>(1, new ListNode<>(2, null));
-    //     assertFalse(Practice.sumMatch(root, head));
-    // }
+    @Test
+    void sumMatch_emptyTreeNonEmptyListFalse() {
+        BinaryTreeNode<Integer> root = null;
+        /*
+         * List:
+         *   1 -> 2
+         */
+        ListNode<Integer> head = new ListNode<>(1, new ListNode<>(2, null));
+        assertFalse(Practice.sumMatch(root, head));
+    }
 
     // // ===== graphSum & sinkCount (directed; neighbors = outgoing) =============
 
