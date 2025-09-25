@@ -164,7 +164,6 @@ public class Practice {
         return frequencyMap;
     }
 
-
     /**
      * Returns the number of levels in the tree.
      * 
@@ -178,7 +177,7 @@ public class Practice {
         {
             return 0;
         }
-        
+
         int left = levelCount(root.left);
         int right = levelCount(root.right);
 
@@ -217,9 +216,21 @@ public class Practice {
      * @return the sum of the nodes at the given level
      */
     public static int sumAtLevel(BinaryTreeNode<Integer> root, int level) {
-        return 0;
-    }
+        if(root == null || level < 1)
+        {
+            return 0;
+        }
 
+        if(level == 1)
+        {
+            return root.data;
+        }
+
+        int left = sumAtLevel(root.left, level - 1);
+        int right = sumAtLevel(root.right, level - 1);
+
+        return left + right;
+    }
 
     /**
      * Returns true if the sum of the values in a given tree is equal to the sum

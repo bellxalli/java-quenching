@@ -256,77 +256,77 @@ public class PracticeTest {
         assertEquals(5, Practice.levelCount(root));
     }
 
-    // // ===== sumAtLevel ========================================================
+    // ===== sumAtLevel ========================================================
 
-    // @Test
-    // void sumAtLevel_exampleFromSpec_level3Is18() {
-    //     /*
-    //      *       5
-    //      *     /   \
-    //      *    8     4
-    //      *   / \   /
-    //      *  7  9  2
-    //      *    /
-    //      *   1
-    //      * Level 3 nodes: 7, 9, 2 -> sum = 18
-    //      */
-    //     BinaryTreeNode<Integer> root =
-    //         new BinaryTreeNode<>(5,
-    //             new BinaryTreeNode<>(8,
-    //                 new BinaryTreeNode<>(7),
-    //                 new BinaryTreeNode<>(9,
-    //                     new BinaryTreeNode<>(1),
-    //                     null)),
-    //             new BinaryTreeNode<>(4,
-    //                 new BinaryTreeNode<>(2),
-    //                 null));
+    @Test
+    void sumAtLevel_exampleFromSpec_level3Is18() {
+        /*
+         *       5
+         *     /   \
+         *    8     4
+         *   / \   /
+         *  7  9  2
+         *    /
+         *   1
+         * Level 3 nodes: 7, 9, 2 -> sum = 18
+         */
+        BinaryTreeNode<Integer> root =
+            new BinaryTreeNode<>(5,
+                new BinaryTreeNode<>(8,
+                    new BinaryTreeNode<>(7),
+                    new BinaryTreeNode<>(9,
+                        new BinaryTreeNode<>(1),
+                        null)),
+                new BinaryTreeNode<>(4,
+                    new BinaryTreeNode<>(2),
+                    null));
 
-    //     assertEquals(18, Practice.sumAtLevel(root, 3));
-    // }
+        assertEquals(18, Practice.sumAtLevel(root, 3));
+    }
 
-    // @Test
-    // void sumAtLevel_level1IsRootValue() {
-    //     /*
-    //      *    12
-    //      *   /  \
-    //      *  7    5
-    //      */
-    //     BinaryTreeNode<Integer> root =
-    //         new BinaryTreeNode<>(12,
-    //             new BinaryTreeNode<>(7),
-    //             new BinaryTreeNode<>(5));
+    @Test
+    void sumAtLevel_level1IsRootValue() {
+        /*
+         *    12
+         *   /  \
+         *  7    5
+         */
+        BinaryTreeNode<Integer> root =
+            new BinaryTreeNode<>(12,
+                new BinaryTreeNode<>(7),
+                new BinaryTreeNode<>(5));
 
-    //     assertEquals(12, Practice.sumAtLevel(root, 1));
-    // }
+        assertEquals(12, Practice.sumAtLevel(root, 1));
+    }
 
-    // @Test
-    // void sumAtLevel_levelBeyondDepthIsZero() {
-    //     /*
-    //      *   9
-    //      *    \
-    //      *     2
-    //      */
-    //     BinaryTreeNode<Integer> root =
-    //         new BinaryTreeNode<>(9,
-    //             null,
-    //             new BinaryTreeNode<>(2));
-    //     assertEquals(0, Practice.sumAtLevel(root, 5));
-    // }
+    @Test
+    void sumAtLevel_levelBeyondDepthIsZero() {
+        /*
+         *   9
+         *    \
+         *     2
+         */
+        BinaryTreeNode<Integer> root =
+            new BinaryTreeNode<>(9,
+                null,
+                new BinaryTreeNode<>(2));
+        assertEquals(0, Practice.sumAtLevel(root, 5));
+    }
 
-    // @Test
-    // void sumAtLevel_levelZeroIsNotPresentSoZero() {
-    //     /*
-    //      *   3
-    //      */
-    //     BinaryTreeNode<Integer> root = new BinaryTreeNode<>(3);
-    //     assertEquals(0, Practice.sumAtLevel(root, 0));
-    // }
+    @Test
+    void sumAtLevel_levelZeroIsNotPresentSoZero() {
+        /*
+         *   3
+         */
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(3);
+        assertEquals(0, Practice.sumAtLevel(root, 0));
+    }
 
-    // @Test
-    // void sumAtLevel_emptyTreeIsZero() {
-    //     BinaryTreeNode<Integer> root = null;
-    //     assertEquals(0, Practice.sumAtLevel(root, 2));
-    // }
+    @Test
+    void sumAtLevel_emptyTreeIsZero() {
+        BinaryTreeNode<Integer> root = null;
+        assertEquals(0, Practice.sumAtLevel(root, 2));
+    }
 
     // // ===== sumMatch ==========================================================
 
