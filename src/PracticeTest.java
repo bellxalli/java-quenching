@@ -133,65 +133,65 @@ public class PracticeTest {
         assertEquals(13, Practice.biggestNumber(head));
     }
 
-    // // ===== frequencies =======================================================
+    // ===== frequencies =======================================================
 
-    // @Test
-    // void frequencies_stringsExampleFromSpecPlusMore() {
-    //     /*
-    //      * List:
-    //      *   a -> x -> a -> a -> x -> y -> z -> y
-    //      * Expected: {a=3, x=2, y=2, z=1}
-    //      */
-    //     ListNode<String> head = new ListNode<>("a",
-    //         new ListNode<>("x",
-    //             new ListNode<>("a",
-    //                 new ListNode<>("a",
-    //                     new ListNode<>("x",
-    //                         new ListNode<>("y",
-    //                             new ListNode<>("z",
-    //                                 new ListNode<>("y", null))))))));
+    @Test
+    void frequencies_stringsExampleFromSpecPlusMore() {
+        /*
+         * List:
+         *   a -> x -> a -> a -> x -> y -> z -> y
+         * Expected: {a=3, x=2, y=2, z=1}
+         */
+        ListNode<String> head = new ListNode<>("a",
+            new ListNode<>("x",
+                new ListNode<>("a",
+                    new ListNode<>("a",
+                        new ListNode<>("x",
+                            new ListNode<>("y",
+                                new ListNode<>("z",
+                                    new ListNode<>("y", null))))))));
 
-    //     Map<String, Integer> expected = new HashMap<>();
-    //     expected.put("a", 3);
-    //     expected.put("x", 2);
-    //     expected.put("y", 2);
-    //     expected.put("z", 1);
+        Map<String, Integer> expected = new HashMap<>();
+        expected.put("a", 3);
+        expected.put("x", 2);
+        expected.put("y", 2);
+        expected.put("z", 1);
 
-    //     assertEquals(expected, Practice.frequencies(head));
-    // }
+        assertEquals(expected, Practice.frequencies(head));
+    }
 
-    // @Test
-    // void frequencies_integersArbitraryOrder() {
-    //     /*
-    //      * List:
-    //      *   7 -> 9 -> 7 -> 7 -> 10 -> 9 -> 10 -> 7 -> 10 -> 10 -> 10
-    //      * Expected: {7=4, 9=2, 10=5}
-    //      */
-    //     ListNode<Integer> head = new ListNode<>(7,
-    //         new ListNode<>(9,
-    //             new ListNode<>(7,
-    //                 new ListNode<>(7,
-    //                     new ListNode<>(10,
-    //                         new ListNode<>(9,
-    //                             new ListNode<>(10,
-    //                                 new ListNode<>(7,
-    //                                     new ListNode<>(10,
-    //                                         new ListNode<>(10,
-    //                                             new ListNode<>(10, null)))))))))));
+    @Test
+    void frequencies_integersArbitraryOrder() {
+        /*
+         * List:
+         *   7 -> 9 -> 7 -> 7 -> 10 -> 9 -> 10 -> 7 -> 10 -> 10 -> 10
+         * Expected: {7=4, 9=2, 10=5}
+         */
+        ListNode<Integer> head = new ListNode<>(7,
+            new ListNode<>(9,
+                new ListNode<>(7,
+                    new ListNode<>(7,
+                        new ListNode<>(10,
+                            new ListNode<>(9,
+                                new ListNode<>(10,
+                                    new ListNode<>(7,
+                                        new ListNode<>(10,
+                                            new ListNode<>(10,
+                                                new ListNode<>(10, null)))))))))));
 
-    //     Map<Integer, Integer> expected = new HashMap<>();
-    //     expected.put(7, 4);
-    //     expected.put(9, 2);
-    //     expected.put(10, 5);
+        Map<Integer, Integer> expected = new HashMap<>();
+        expected.put(7, 4);
+        expected.put(9, 2);
+        expected.put(10, 5);
 
-    //     assertEquals(expected, Practice.frequencies(head));
-    // }
+        assertEquals(expected, Practice.frequencies(head));
+    }
 
-    // @Test
-    // void frequencies_nullHeadReturnsEmptyMap() {
-    //     ListNode<String> head = null;
-    //     assertTrue(Practice.frequencies(head).isEmpty());
-    // }
+    @Test
+    void frequencies_nullHeadReturnsEmptyMap() {
+        ListNode<String> head = null;
+        assertTrue(Practice.frequencies(head).isEmpty());
+    }
 
     // // ===== levelCount ========================================================
 
