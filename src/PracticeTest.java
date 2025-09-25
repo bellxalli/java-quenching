@@ -193,68 +193,68 @@ public class PracticeTest {
         assertTrue(Practice.frequencies(head).isEmpty());
     }
 
-    // // ===== levelCount ========================================================
+    // ===== levelCount ========================================================
 
-    // @Test
-    // void levelCount_nullRootIsZero() {
-    //     BinaryTreeNode<Integer> root = null;
-    //     assertEquals(0, Practice.levelCount(root));
-    // }
+    @Test
+    void levelCount_nullRootIsZero() {
+        BinaryTreeNode<Integer> root = null;
+        assertEquals(0, Practice.levelCount(root));
+    }
 
-    // @Test
-    // void levelCount_singleNodeIsOne() {
-    //     /*
-    //      *   42
-    //      */
-    //     BinaryTreeNode<Integer> root = new BinaryTreeNode<>(42);
-    //     assertEquals(1, Practice.levelCount(root));
-    // }
+    @Test
+    void levelCount_singleNodeIsOne() {
+        /*
+         *   42
+         */
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(42);
+        assertEquals(1, Practice.levelCount(root));
+    }
 
-    // @Test
-    // void levelCount_balancedThreeLevels() {
-    //     /*
-    //      *        8
-    //      *      /   \
-    //      *     3     10
-    //      *    / \      \
-    //      *   1   6      14
-    //      */
-    //     BinaryTreeNode<Integer> root =
-    //         new BinaryTreeNode<>(8,
-    //             new BinaryTreeNode<>(3,
-    //                 new BinaryTreeNode<>(1),
-    //                 new BinaryTreeNode<>(6)),
-    //             new BinaryTreeNode<>(10,
-    //                 null,
-    //                 new BinaryTreeNode<>(14)));
-    //     assertEquals(3, Practice.levelCount(root));
-    // }
+    @Test
+    void levelCount_balancedThreeLevels() {
+        /*
+         *        8
+         *      /   \
+         *     3     10
+         *    / \      \
+         *   1   6      14
+         */
+        BinaryTreeNode<Integer> root =
+            new BinaryTreeNode<>(8,
+                new BinaryTreeNode<>(3,
+                    new BinaryTreeNode<>(1),
+                    new BinaryTreeNode<>(6)),
+                new BinaryTreeNode<>(10,
+                    null,
+                    new BinaryTreeNode<>(14)));
+        assertEquals(3, Practice.levelCount(root));
+    }
 
-    // @Test
-    // void levelCount_unbalancedDeeperLeft() {
-    //     /*
-    //      *       5
-    //      *      /
-    //      *     4
-    //      *    /
-    //      *   3
-    //      *    \
-    //      *     2
-    //      *    /
-    //      *   1
-    //      */
-    //     BinaryTreeNode<Integer> root =
-    //         new BinaryTreeNode<>(5,
-    //             new BinaryTreeNode<>(4,
-    //                 new BinaryTreeNode<>(3,
-    //                     null,
-    //                     new BinaryTreeNode<>(2,
-    //                         new BinaryTreeNode<>(1),
-    //                         null)),
-    //                 null),
-    //             null);
-    //     assertEquals(5, Practice.levelCount(root));
-    // }
+    @Test
+    void levelCount_unbalancedDeeperLeft() {
+        /*
+         *       5
+         *      /
+         *     4
+         *    /
+         *   3
+         *    \
+         *     2
+         *    /
+         *   1
+         */
+        BinaryTreeNode<Integer> root =
+            new BinaryTreeNode<>(5,
+                new BinaryTreeNode<>(4,
+                    new BinaryTreeNode<>(3,
+                        null,
+                        new BinaryTreeNode<>(2,
+                            new BinaryTreeNode<>(1),
+                            null)),
+                    null),
+                null);
+        assertEquals(5, Practice.levelCount(root));
+    }
 
     // // ===== sumAtLevel ========================================================
 
