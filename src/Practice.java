@@ -270,6 +270,7 @@ public class Practice {
         {
             return 0;
         }
+        
         int sum = root.data + treeSum(root.left) + treeSum(root.right);
         return sum;
     }
@@ -284,7 +285,29 @@ public class Practice {
      * @return the sum of all the vertices
      */
     public static int graphSum(Vertex<Integer> start) {
-        return 0;
+        if(start == null)
+        {
+            return 0;
+        }
+        Set<Vertex<Integer>> visited = new HashSet<>();
+        return sumGraph(start, visited);
+    }
+    public static int sumGraph(Vertex<Integer> vert, Set<Vertex<Integer>> visited)
+    {
+        if(visited.contains(vert))
+        {
+            return 0;
+        }
+
+        visited.add(vert);
+        int sum = vert.data;
+
+        for(Vertex<Integer> n : vert.neighbors)
+        {
+            sum += sumGraph(n, visited);
+        }
+
+        return sum;
     }
 
     /**

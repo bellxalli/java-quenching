@@ -401,150 +401,150 @@ public class PracticeTest {
         assertFalse(Practice.sumMatch(root, head));
     }
 
-    // // ===== graphSum & sinkCount (directed; neighbors = outgoing) =============
+    // ===== graphSum & sinkCount (directed; neighbors = outgoing) =============
 
-    // @Test
-    // void graphSum_cyclicComponentPlusDetachedVertex() {
-    //     /*
-    //      * Vertices (values):
-    //      *   v1(5), v2(7), v3(-2), v4(10), v5(1), v6(3)
-    //      *
-    //      * Edges (directed), includes cycles:
-    //      *   v1 -> v2, v3
-    //      *   v2 -> v4
-    //      *   v3 -> v2, v5
-    //      *   v4 -> v1           // cycle v1 -> v2 -> v4 -> v1
-    //      *   v5 -> v3           // cycle v3 <-> v5
-    //      *   v6 -> (none)       // detached sink (not reachable from v1)
-    //      *
-    //      * From v1, reachable: {v1,v2,v3,v4,v5}
-    //      * Sum = 5 + 7 + (-2) + 10 + 1 = 21
-    //      */
-    //     Vertex<Integer> v1 = new Vertex<>(5);
-    //     Vertex<Integer> v2 = new Vertex<>(7);
-    //     Vertex<Integer> v3 = new Vertex<>(-2);
-    //     Vertex<Integer> v4 = new Vertex<>(10);
-    //     Vertex<Integer> v5 = new Vertex<>(1);
-    //     Vertex<Integer> v6 = new Vertex<>(3);
+    @Test
+    void graphSum_cyclicComponentPlusDetachedVertex() {
+        /*
+         * Vertices (values):
+         *   v1(5), v2(7), v3(-2), v4(10), v5(1), v6(3)
+         *
+         * Edges (directed), includes cycles:
+         *   v1 -> v2, v3
+         *   v2 -> v4
+         *   v3 -> v2, v5
+         *   v4 -> v1           // cycle v1 -> v2 -> v4 -> v1
+         *   v5 -> v3           // cycle v3 <-> v5
+         *   v6 -> (none)       // detached sink (not reachable from v1)
+         *
+         * From v1, reachable: {v1,v2,v3,v4,v5}
+         * Sum = 5 + 7 + (-2) + 10 + 1 = 21
+         */
+        Vertex<Integer> v1 = new Vertex<>(5);
+        Vertex<Integer> v2 = new Vertex<>(7);
+        Vertex<Integer> v3 = new Vertex<>(-2);
+        Vertex<Integer> v4 = new Vertex<>(10);
+        Vertex<Integer> v5 = new Vertex<>(1);
+        Vertex<Integer> v6 = new Vertex<>(3);
 
-    //     v1.neighbors.add(v2);
-    //     v1.neighbors.add(v3);
+        v1.neighbors.add(v2);
+        v1.neighbors.add(v3);
 
-    //     v2.neighbors.add(v4);
+        v2.neighbors.add(v4);
 
-    //     v3.neighbors.add(v2);
-    //     v3.neighbors.add(v5);
+        v3.neighbors.add(v2);
+        v3.neighbors.add(v5);
 
-    //     v4.neighbors.add(v1);
+        v4.neighbors.add(v1);
 
-    //     v5.neighbors.add(v3);
+        v5.neighbors.add(v3);
 
-    //     // v6 has no neighbors
+        // v6 has no neighbors
 
-    //     assertEquals(21, Practice.graphSum(v1));
-    //     assertEquals(3, Practice.graphSum(v6));  // only itself
-    //     assertEquals(0, Practice.graphSum(null));
-    // }
+        assertEquals(21, Practice.graphSum(v1));
+        assertEquals(3, Practice.graphSum(v6));  // only itself
+        assertEquals(0, Practice.graphSum(null));
+    }
 
-    // @Test
-    // void sinkCount_cyclicComponentWithOneReachableSinkAndOneUnreachableSink() {
-    //     /*
-    //      * Values:
-    //      *   a(10), b(4), c(7), d(2), e(9), f(4)
-    //      *
-    //      * Edges (directed):
-    //      *   a -> b, c
-    //      *   b -> d
-    //      *   c -> b, e
-    //      *   d -> a              // cycle a -> b -> d -> a
-    //      *   e -> c              // cycle c <-> e
-    //      *   f -> (none)         // unreachable sink from a
-    //      *
-    //      * Also add a reachable sink g(5):
-    //      *   g -> (none)
-    //      *   and connect c -> g
-    //      *
-    //      * From a, sinks reachable: only g
-    //      * So sinkCount(a) = 1
-    //      * From f, sinks reachable: f itself, so sinkCount(f) = 1
-    //      */
-    //     Vertex<Integer> a = new Vertex<>(10);
-    //     Vertex<Integer> b = new Vertex<>(4);
-    //     Vertex<Integer> c = new Vertex<>(7);
-    //     Vertex<Integer> d = new Vertex<>(2);
-    //     Vertex<Integer> e = new Vertex<>(9);
-    //     Vertex<Integer> f = new Vertex<>(4);
-    //     Vertex<Integer> g = new Vertex<>(5);
+    @Test
+    void sinkCount_cyclicComponentWithOneReachableSinkAndOneUnreachableSink() {
+        /*
+         * Values:
+         *   a(10), b(4), c(7), d(2), e(9), f(4)
+         *
+         * Edges (directed):
+         *   a -> b, c
+         *   b -> d
+         *   c -> b, e
+         *   d -> a              // cycle a -> b -> d -> a
+         *   e -> c              // cycle c <-> e
+         *   f -> (none)         // unreachable sink from a
+         *
+         * Also add a reachable sink g(5):
+         *   g -> (none)
+         *   and connect c -> g
+         *
+         * From a, sinks reachable: only g
+         * So sinkCount(a) = 1
+         * From f, sinks reachable: f itself, so sinkCount(f) = 1
+         */
+        Vertex<Integer> a = new Vertex<>(10);
+        Vertex<Integer> b = new Vertex<>(4);
+        Vertex<Integer> c = new Vertex<>(7);
+        Vertex<Integer> d = new Vertex<>(2);
+        Vertex<Integer> e = new Vertex<>(9);
+        Vertex<Integer> f = new Vertex<>(4);
+        Vertex<Integer> g = new Vertex<>(5);
 
-    //     a.neighbors.add(b);
-    //     a.neighbors.add(c);
+        a.neighbors.add(b);
+        a.neighbors.add(c);
 
-    //     b.neighbors.add(d);
+        b.neighbors.add(d);
 
-    //     c.neighbors.add(b);
-    //     c.neighbors.add(e);
+        c.neighbors.add(b);
+        c.neighbors.add(e);
 
-    //     d.neighbors.add(a);
+        d.neighbors.add(a);
 
-    //     e.neighbors.add(c);
+        e.neighbors.add(c);
 
-    //     // f -> (none)
-    //     // g -> (none)
-    //     c.neighbors.add(g); // make g reachable from a via c
+        // f -> (none)
+        // g -> (none)
+        c.neighbors.add(g); // make g reachable from a via c
 
-    //     assertEquals(1, Practice.sinkCount(a)); // only g is sink and reachable
-    //     assertEquals(1, Practice.sinkCount(f)); // f is a sink by itself
-    // }
+        assertEquals(1, Practice.sinkCount(a)); // only g is sink and reachable
+        assertEquals(1, Practice.sinkCount(f)); // f is a sink by itself
+    }
 
-    // @Test
-    // void sinkCount_cyclicNoSinksReachable() {
-    //     /*
-    //      * Values:
-    //      *   x(1), y(2), z(3)
-    //      * Edges:
-    //      *   x -> y
-    //      *   y -> z
-    //      *   z -> x   // 3-cycle, all outdegree > 0
-    //      * From x, there are no reachable sinks.
-    //      */
-    //     Vertex<Integer> x = new Vertex<>(1);
-    //     Vertex<Integer> y = new Vertex<>(2);
-    //     Vertex<Integer> z = new Vertex<>(3);
+    @Test
+    void sinkCount_cyclicNoSinksReachable() {
+        /*
+         * Values:
+         *   x(1), y(2), z(3)
+         * Edges:
+         *   x -> y
+         *   y -> z
+         *   z -> x   // 3-cycle, all outdegree > 0
+         * From x, there are no reachable sinks.
+         */
+        Vertex<Integer> x = new Vertex<>(1);
+        Vertex<Integer> y = new Vertex<>(2);
+        Vertex<Integer> z = new Vertex<>(3);
 
-    //     x.neighbors.add(y);
-    //     y.neighbors.add(z);
-    //     z.neighbors.add(x);
+        x.neighbors.add(y);
+        y.neighbors.add(z);
+        z.neighbors.add(x);
 
-    //     assertEquals(0, Practice.sinkCount(x));
-    // }
+        assertEquals(0, Practice.sinkCount(x));
+    }
 
-    // @Test
-    // void sinkCount_twoReachableSinksDifferentBranches() {
-    //     /*
-    //      * Values:
-    //      *   s(8), t(6), u(5), v(7), w(3)
-    //      * Edges:
-    //      *   s -> t, u
-    //      *   t -> v
-    //      *   u -> (none)     // sink #1
-    //      *   v -> (none)     // sink #2
-    //      *   w -> (none)     // unreachable sink from s
-    //      *
-    //      * From s, reachable sinks: u, v  => 2
-    //      */
-    //     Vertex<Integer> s = new Vertex<>(8);
-    //     Vertex<Integer> t = new Vertex<>(6);
-    //     Vertex<Integer> u = new Vertex<>(5);
-    //     Vertex<Integer> v = new Vertex<>(7);
-    //     Vertex<Integer> w = new Vertex<>(3);
+    @Test
+    void sinkCount_twoReachableSinksDifferentBranches() {
+        /*
+         * Values:
+         *   s(8), t(6), u(5), v(7), w(3)
+         * Edges:
+         *   s -> t, u
+         *   t -> v
+         *   u -> (none)     // sink #1
+         *   v -> (none)     // sink #2
+         *   w -> (none)     // unreachable sink from s
+         *
+         * From s, reachable sinks: u, v  => 2
+         */
+        Vertex<Integer> s = new Vertex<>(8);
+        Vertex<Integer> t = new Vertex<>(6);
+        Vertex<Integer> u = new Vertex<>(5);
+        Vertex<Integer> v = new Vertex<>(7);
+        Vertex<Integer> w = new Vertex<>(3);
 
-    //     s.neighbors.add(t);
-    //     s.neighbors.add(u);
-    //     t.neighbors.add(v);
-    //     // u -> none
-    //     // v -> none
-    //     // w -> none (unreachable)
+        s.neighbors.add(t);
+        s.neighbors.add(u);
+        t.neighbors.add(v);
+        // u -> none
+        // v -> none
+        // w -> none (unreachable)
 
-    //     assertEquals(2, Practice.sinkCount(s));
-    // }
+        assertEquals(2, Practice.sinkCount(s));
+    }
 }
